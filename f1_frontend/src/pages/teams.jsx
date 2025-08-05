@@ -1,16 +1,13 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import Headers from "../components/Header"; // Assuming you have a Header component
+import TeamCard from "../components/Teams/TeamCard";
 
 const Teams = () => {
-
-    return (
-        <div>
-            <Headers />
-            <h1>Teams Page</h1>
-            {/* Here you can add components like TeamsList, TeamCard, etc. */}
-        </div>
-    );
+  return (
+    <div>
+      <h1 className="text-3xl font-bold mb-4">Teams</h1>
+      <TeamCard />
+    </div>
+  );
 };
 
 export default Teams;

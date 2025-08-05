@@ -22,8 +22,9 @@ const Header = () => {
 
   return (
     <nav
-      className="relative bg-gradient-to-r from-gray-900 via-black to-gray-900 px-6 py-4 shadow-2xl "
-      style={{ fontFamily: "Racing Sans One, sans-serif" }}
+      // className="relative bg-gradient-to-r from-gray-900 via-black to-gray-900 px-6 py-4 shadow-2xl "
+      className="relative px-6 py-4"
+      style={{ fontFamily: "'Racing Sans One', sans-serif" }}
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
@@ -62,7 +63,7 @@ const Header = () => {
                 className={({ isActive }) =>
                   `relative group px-6 py-2 text-lg font-semibold transition-all duration-300 ${
                     isActive
-                      ?"text-red-400 after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-24 after:h-0.5 after:bg-gradient-to-r after:from-red-500 after:to-red-400 after:rounded-full after:transition-all after:duration-500"
+                      ? "text-red-400 after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-24 after:h-0.5 after:bg-gradient-to-r after:from-red-500 after:to-red-400 after:rounded-full after:transition-all after:duration-500"
                       : "text-gray-300 hover:text-white"
                   }`
                 }

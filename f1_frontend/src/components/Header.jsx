@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <nav
       // className="relative bg-gradient-to-r from-gray-900 via-black to-gray-900 px-6 py-4 shadow-2xl "
-      className="relative px-6 py-4"
+      className="relative px-6 py-4 "
       style={{ fontFamily: "'Racing Sans One', sans-serif" }}
     >
       {/* Background Pattern */}

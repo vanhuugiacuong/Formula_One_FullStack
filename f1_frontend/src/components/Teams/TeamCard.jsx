@@ -4,16 +4,17 @@ import { fetchTeams } from "../../features/teams/teamsSlice";
 
 // Map màu cho từng team (bạn có thể mở rộng)
 const teamColors = {
-  "McLaren": "bg-orange-500",
-  "Ferrari": "bg-red-700",
-  "Mercedes": "bg-teal-400",
-  "Red Bull Racing": "bg-blue-700",
+  McLaren: "bg-gradient-to-br from-orange-500 to-orange-700",
+  "Scuderia Ferrari": "bg-gradient-to-br from-red-700 to-red-900",
+  Mercedes: "bg-gradient-to-br from-teal-400 to-teal-700",
+  "Red Bull Racing": "bg-gradient-to-br from-blue-700 to-blue-900",
   // Thêm các team khác nếu cần
 };
 
 function TeamCard() {
   const dispatch = useDispatch();
   const teams = useSelector((state) => state.teams.data);
+  console.log("Teams data:", teams);
   const status = useSelector((state) => state.teams.status);
 
   useEffect(() => {
@@ -30,17 +31,31 @@ function TeamCard() {
       {teams.map((team) => (
         <div
           key={team.id}
-          className={`rounded-xl shadow-lg p-6 flex flex-col justify-between min-h-[250px] ${teamColors[team.full_name] || "bg-gray-200"}`}
+          className={`rounded-xl shadow-lg p-6 flex flex-col justify-between min-h-[250px] ${
+            teamColors[team.name] || "bg-gray-800"
+          }`}
         >
           <div className="flex items-center justify-between">
             <h2 className="text-3xl font-bold text-white">{team.full_name}</h2>
-            <img src={team.logo_url} alt={team.name} className="w-12 h-12 rounded-full bg-white p-2" />
+            <img
+              src={team.logo_url}
+              alt={team.name}
+              className="w-12 h-12 rounded-full bg-white p-2"
+            />
           </div>
           <div className="flex flex-col md:flex-row items-center mt-4">
-            <img src={team.car_image_url} alt={team.car_model} className="w-full md:w-2/3" />
+            <img
+              src={team.car_image_url}
+              alt={team.car_model}
+              className="w-full md:w-2/3"
+            />
             <div className="ml-0 md:ml-6 mt-4 md:mt-0">
-              <p className="text-white font-semibold">Car Model: {team.car_model}</p>
-              <p className="text-white font-semibold">Short Name: {team.short_name}</p>
+              <p className="text-white font-semibold">
+                Car Model: {team.car_model}
+              </p>
+              <p className="text-white font-semibold">
+                Short Name: {team.short_name}
+              </p>
               {/* Nếu có danh sách driver, render ở đây */}
               {team.drivers && (
                 <div className="mt-2">

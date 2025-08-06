@@ -1,4 +1,5 @@
 import React from "react";
+import BannerRoutes from "../components/bannerRoutes";
 import TeamCard from "../components/Teams/TeamCard";
 
 const Teams = () => {
@@ -17,6 +18,7 @@ const Teams = () => {
         </p>
       </div>
       <TeamCard />
+      <BannerRoutes />
     </div>
   );
 };
